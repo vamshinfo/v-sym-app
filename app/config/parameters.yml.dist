@@ -2,11 +2,11 @@
 # Set parameters here that may be different on each deployment target of the app, e.g. development, staging, production.
 # https://symfony.com/doc/current/best_practices/configuration.html#infrastructure-related-configuration
 parameters:
-    database_host: 127.0.0.1
-    database_port: ~
-    database_name: symfony
-    database_user: root
-    database_password: ~
+    database_host: ec2-54-225-92-1.compute-1.amazonaws.com
+    database_port: 5432
+    database_name: db8p6u3ufjk5fo
+    database_user: hbaruwpzfgidzy
+    database_password: 61fbf1c393a9b7e041c171520b91a8b2bdd1bd2957ef5fa43736d4177b6ccbeb
     # You should uncomment this if you want to use pdo_sqlite
     #database_path: "%kernel.root_dir%/data.db3"
 
