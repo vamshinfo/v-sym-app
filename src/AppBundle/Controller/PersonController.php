@@ -244,4 +244,19 @@ class PersonController extends Controller
             ->getForm()
         ;
     }
+
+
+    public function myAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $RAW_QUERY = 'SELECT * FROM salesforce.contact as contact;'
+        
+        $statement = $em->getConnection()->prepare($RAW_QUERY);
+        $statement->execute();
+        
+        $result = $statement->fetchAll();
+        var_dump($result);
+    }
+    
 }
