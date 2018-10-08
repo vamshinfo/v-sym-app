@@ -246,17 +246,17 @@ class PersonController extends Controller
     }
 
 
-    // public function myAction(Request $request)
-    // {
-    //     $em = $this->getDoctrine()->getManager();
+    public function myAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
 
-    //     $RAW_QUERY = 'SELECT * FROM salesforce.contact as contact;'
+        $RAW_QUERY = 'SELECT id,Name,FirstName,LastName,Email,MobilePhone FROM salesforce.contact as contact;'
         
-    //     $statement = $em->getConnection()->prepare($RAW_QUERY);
-    //     $statement->execute();
+        $statement = $em->getConnection()->prepare($RAW_QUERY);
+        $statement->execute();
         
-    //     $result = $statement->fetchAll();
-    //     var_dump($result);
-    // }
+        $result = $statement->fetchAll();
+        var_dump($result);
+    }
     
 }
