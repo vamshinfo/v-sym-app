@@ -252,15 +252,17 @@ class PersonController extends Controller
 
         $RAW_QUERY = 'SELECT id,Name,FirstName,LastName,Email,MobilePhone FROM salesforce.contact as contact';
         
-       
-       try {
- $statement = $em->getConnection()->prepare($RAW_QUERY);
-        $statement->execute(); 
+        
+  try {
+        $statement = $em->getConnection()->prepare($RAW_QUERY);
+        $statement->execute();
         $result = $statement->fetchAll();
         var_dump($result);
-  
-       } catch (\Doctrine\ORM\NoResultException $e) {
-              return $e;
-            }
+        } 
+        catch (\Doctrine\ORM\NoResultException $e) {
+             return null;
+         }
+        
+    }
     
 }
