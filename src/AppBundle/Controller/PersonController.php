@@ -251,7 +251,7 @@ class PersonController extends Controller
         $em = $this->getDoctrine()->getManager();
      var_dump($em);
      exit;
-        $RAW_QUERY = 'SELECT id,Name,FirstName,LastName,Email,MobilePhone FROM salesforce.contact as contact;'
+        $RAW_QUERY = 'SELECT id,Name,FirstName,LastName,Email,MobilePhone FROM salesforce.contact as contact';
         
         $statement = $em->getConnection()->prepare($RAW_QUERY);
         $statement->execute();
