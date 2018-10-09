@@ -209,7 +209,8 @@ class PersonController extends Controller
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, $id)
-    {
+    { echo "hello world";
+    exit;
         $form = $this->createDeleteForm($id);
         $form->handleRequest($request);
 
