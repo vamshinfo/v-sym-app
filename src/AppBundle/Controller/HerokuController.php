@@ -47,7 +47,7 @@ class HerokuController extends Controller
     {
        
         $em = $this->getDoctrine()->getManager();
-        $RAW_QUERY = "INSERT INTO salesforce.contact (name,firstname,lastname,email,mobilephone) values ('suresh','suresh','eshwar','suresh@gmail.com',9858585858)";
+        $RAW_QUERY = 'SELECT id,Name,FirstName,LastName,Email,MobilePhone FROM salesforce.contact as contact';
         try {
         $statement = $em->getConnection()->prepare($RAW_QUERY);
         $statement->execute();
