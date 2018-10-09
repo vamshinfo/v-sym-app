@@ -23,15 +23,17 @@ class HerokuController extends Controller
         $statement->execute();
         $result = $statement->fetchAll();
         var_dump($result);
+        $data[$result] = $result;
     	    } 
         catch (\Doctrine\ORM\NoResultException $e) {
              return null;
              var_dump($e);
          }
+         return $this->render('AppBundle:Page:my.html.twig', array('contact' => $data));
 
-        return array(
-            'result' => $result,
-              );
-    }
+    //     return array(
+    //         'result' => $result,
+    //           );
+     }
 
 }
