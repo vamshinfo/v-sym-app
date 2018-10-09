@@ -13,18 +13,18 @@
                 <th>Lastname</th>
                 <th>Email</th>
                 <th>Mobilephone</th>
-                <th>Actions</th>
+              
             </tr>
         </thead>
         <tbody>
-        {% for result in contacts %}
+        {% for result in results %}
             <tr>
-                <td>{{ contacts.id }}</a></td>
-                <td>{{ contacts.name }}</td>
-                <td>{{ contacts.firstName }}</td>
-                <td>{{ contacts.lastName }}</td>
-                <td>{{ contacts.email }}</td>
-                <td>{{ contacts.mobilePhone }}</td>
+                <td>{{ results.id }}</a></td>
+                <td>{{ results.name }}</td>
+                <td>{{ results.firstName }}</td>
+                <td>{{ results.lastName }}</td>
+                <td>{{ results.email }}</td>
+                <td>{{ results.mobilePhone }}</td>
                                          </tr>
         {% endfor %}
         </tbody>
