@@ -4,4 +4,29 @@
 
 {% block body %}
 <h1>Welcome to the Heroku:my page</h1>
+ <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Email</th>
+                <th>Mobilephone</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for result in contacts %}
+            <tr>
+                <td>{{ contacts.id }}</a></td>
+                <td>{{ contacts.name }}</td>
+                <td>{{ contacts.firstName }}</td>
+                <td>{{ contacts.lastName }}</td>
+                <td>{{ contacts.email }}</td>
+                <td>{{ contacts.mobilePhone }}</td>
+                                         </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}
