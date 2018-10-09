@@ -247,23 +247,36 @@ class PersonController extends Controller
 
 
     public function myAction(Request $request)
-    {
-        $em = $this->getDoctrine()->getManager();
-dump($em);
-exit();
-        $RAW_QUERY = 'SELECT id,Name,FirstName,LastName,Email,MobilePhone FROM salesforce.contact as contact';
-               
-  try {
-        $statement = $em->getConnection()->prepare($RAW_QUERY);
-        $statement->execute();
-        $result = $statement->fetchAll();
-  
-        } 
-        catch (\Doctrine\ORM\NoResultException $e) {
-             return null;
-                   var_dump($e);
+   {
 
-         }
+function pg_connection_string() {
+  // we will fill this out next
+    return "dbname=db8p6u3ufjk5fo host=ec2-54-225-92-1.compute-1.amazonaws.com port=5432 user=hbaruwpzfgidzy 
+    password=61fbf1c393a9b7e041c171520b91a8b2bdd1bd2957ef5fa43736d4177b6ccbeb 
+    sslmode=require";
+}
+
+    $db = pg_connect(pg_connection_string());
+if (!$db) {
+    echo "Database connection error."
+    exit;
+}
+//         $em = $this->getDoctrine()->getManager();
+// dump($em);
+// exit();
+//         $RAW_QUERY = 'SELECT id,Name,FirstName,LastName,Email,MobilePhone FROM salesforce.contact as contact';
+               
+//   try {
+//         $statement = $em->getConnection()->prepare($RAW_QUERY);
+//         $statement->execute();
+//         $result = $statement->fetchAll();
+  
+//         } 
+//         catch (\Doctrine\ORM\NoResultException $e) {
+//              return null;
+//                    var_dump($e);
+
+//          }
         
     }
     
