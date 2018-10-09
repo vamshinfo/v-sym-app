@@ -30,31 +30,6 @@ class HerokuController extends Controller
           return $this->render('AppBundle:Page:my.html.twig', array('result' => $result));
 
     }
-
-    // /**
-    //  * 
-    //  * @Route("/", name="heroku")
-    //  * @Method("GET")
-    //  * @Template()
-    //  */
-    // public function indexAction()
-    // {
-    //     $contact = new Person();
-    //     $form = $this->createCreateForm($conta);
-    //     $form->handleRequest($request);
-
-    //     if ($form->isValid()) {
-    //         $em = $this->getDoctrine()->getManager();
-    //         $em->persist($entity);
-    //         $em->flush();
-
-    //         return $this->redirect($this->generateUrl('person_show', array('id' => $entity->getId())));
-    //     }
-
-    //     return array(
-    //         'entity' => $entity,
-    //         'form'   => $form->createView(),
-    //     );
-    // }
+    
 
 }
