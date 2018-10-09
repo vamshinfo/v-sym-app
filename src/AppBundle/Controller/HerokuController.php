@@ -5,18 +5,49 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use AppBundle\contact\Contact;
+use AppBundle\Form\ContactType;
+
 
 class HerokuController extends Controller
-{
+// {
+// 	/**
+//      * 
+//      * @Route("/my/new", name="heroku")
+//      * @Method("POST")
+//      * @Template("AppBundle:Contact:new.html.twig")
+//      */
+//     public function indexAction()
+//     {
+//         $contact = new Contact();
+//         $form = $this->createCreateForm($contact);
+//         $form->handleRequest($request);
+
+//         if ($form->isValid()) {
+//             $em = $this->getDoctrine()->getManager();
+//             $em->persist($contact);
+//             $em->flush();
+
+//             return $this->redirect($this->generateUrl('myaction', array('id' => $contact->getId())));
+//         }
+
+//         return array(
+//             'contact' => $Contact,
+//             'form'   => $form->createView(),
+//         );
+//     }
+
     /**
-     * @Route("/my")
+     * @Route("/my" name="myaction")
      * @Template()
      */
     public function myAction()
     {
        
         $em = $this->getDoctrine()->getManager();
-        $RAW_QUERY = 'SELECT id,Name,FirstName,LastName,Email,MobilePhone FROM salesforce.contact as contact';
+        $RAW_QUERY = 'insert into salesforce.contact (name,firstname,lastname,email,mobilephone) values ('suresh','suresh','eshwar','suresh@gmail.com',9858585858)';
         try {
         $statement = $em->getConnection()->prepare($RAW_QUERY);
         $statement->execute();
@@ -31,30 +62,46 @@ class HerokuController extends Controller
 
     }
 
+    
+
+
+
     // /**
-    //  * 
-    //  * @Route("/", name="heroku")
+    //  * Creates a form to create a Contact contact.
+    //  *
+    //  * @param Contact $contact The contact
+    //  *
+    //  * @return \Symfony\Component\Form\Form The form
+    //  */
+    // private function createCreateForm(Contact $contact)
+    // {
+    //     $form = $this->createForm(new ContactType(), $contact, array(
+    //         'action' => $this->generateUrl('Contact_create'),
+    //         'method' => 'POST',
+    //     ));
+
+    //     $form->add('submit', 'submit', array('label' => 'Create'));
+
+    //     return $form;
+    // }
+
+    // /**
+    //  * Displays a form to create a new Contact contact.
+    //  *
+    //  * @Route("/new", name="Contact_new")
     //  * @Method("GET")
     //  * @Template()
     //  */
-    // public function indexAction()
+    // public function newAction()
     // {
-    //     $contact = new Person();
-    //     $form = $this->createCreateForm($contact);
-    //     $form->handleRequest($request);
-
-    //     if ($form->isValid()) {
-    //         $em = $this->getDoctrine()->getManager();
-    //         $em->persist($contact);
-    //         $em->flush();
-
-    //         return $this->redirect($this->generateUrl('person_show', array('id' => $entity->getId())));
-    //     }
+    //     $contact = new Contact();
+    //     $form   = $this->createCreateForm($contact);
 
     //     return array(
-    //         'entity' => $entity,
+    //         'contact' => $contact,
     //         'form'   => $form->createView(),
     //     );
     // }
+
 
 }
