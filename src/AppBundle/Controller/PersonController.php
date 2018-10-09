@@ -244,7 +244,12 @@ class PersonController extends Controller
             ->getForm()
         ;
     }
-
+ /**
+     * 
+     *
+     * @Route("/", name="myaction")
+     * 
+     */
 
     public function myAction(Request $request)
     { 
@@ -267,26 +272,26 @@ class PersonController extends Controller
     }
     
 
-     public function testAction(Request $request)
-    { 
-echo "hero coming";
-exit;
-        // $em = $this->getDoctrine()->getManager();
-        // $RAW_QUERY = 'SELECT id,Name,FirstName,LastName,Email,MobilePhone FROM salesforce.contact as contact';
-        // try {
-        // $statement = $em->getConnection()->prepare($RAW_QUERY);
-        // $statement->execute();
-        // $result = $statement->fetchAll();
-        // var_dump($result);
+//      public function testAction(Request $request)
+//     { 
+// echo "hero coming";
+// exit;
+//         // $em = $this->getDoctrine()->getManager();
+//         // $RAW_QUERY = 'SELECT id,Name,FirstName,LastName,Email,MobilePhone FROM salesforce.contact as contact';
+//         // try {
+//         // $statement = $em->getConnection()->prepare($RAW_QUERY);
+//         // $statement->execute();
+//         // $result = $statement->fetchAll();
+//         // var_dump($result);
 
-        // } 
-        // catch (\Doctrine\ORM\NoResultException $e) {
-        //      return null;
-        //      var_dump($e);
-        //      exit;
-        //  }
+//         // } 
+//         // catch (\Doctrine\ORM\NoResultException $e) {
+//         //      return null;
+//         //      var_dump($e);
+//         //      exit;
+//         //  }
         
-    }
+//     }
 
 
 }
