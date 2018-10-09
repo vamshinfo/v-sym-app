@@ -260,7 +260,7 @@ class PersonController extends Controller
         } 
         catch (\Doctrine\ORM\NoResultException $e) {
              return null;
-             dump($e);
+             var_dump($e);
              exit;
          }
         
