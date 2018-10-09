@@ -251,24 +251,24 @@ class PersonController extends Controller
      * 
      */
 
-    public function myAction(Request $request)
-    { echo "hello";
+    // public function myAction(Request $request)
+    // { echo "hello";
 
-        $em = $this->getDoctrine()->getManager();
-        $RAW_QUERY = 'SELECT id,Name,FirstName,LastName,Email,MobilePhone FROM salesforce.contact as contact';
-        try {
-        $statement = $em->getConnection()->prepare($RAW_QUERY);
-        $statement->execute();
-        $result = $statement->fetchAll();
-        var_dump($result);
+    //     $em = $this->getDoctrine()->getManager();
+    //     $RAW_QUERY = 'SELECT id,Name,FirstName,LastName,Email,MobilePhone FROM salesforce.contact as contact';
+    //     try {
+    //     $statement = $em->getConnection()->prepare($RAW_QUERY);
+    //     $statement->execute();
+    //     $result = $statement->fetchAll();
+    //     var_dump($result);
 
-        } 
-        catch (\Doctrine\ORM\NoResultException $e) {
-             return null;
-             var_dump($e);
-         }
+    //     } 
+    //     catch (\Doctrine\ORM\NoResultException $e) {
+    //          return null;
+    //          var_dump($e);
+    //      }
         
-    }
+    // }
     
 
 //      public function testAction(Request $request)
