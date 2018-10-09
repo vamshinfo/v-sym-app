@@ -250,7 +250,7 @@ class PersonController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 dump($em);
-die;
+exit();
         $RAW_QUERY = 'SELECT id,Name,FirstName,LastName,Email,MobilePhone FROM salesforce.contact as contact';
                
   try {
