@@ -251,9 +251,7 @@ class PersonController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $RAW_QUERY = 'SELECT id,Name,FirstName,LastName,Email,MobilePhone FROM salesforce.contact as contact';
-        
-        
-  try {
+        try {
         $statement = $em->getConnection()->prepare($RAW_QUERY);
         $statement->execute();
         $result = $statement->fetchAll();
@@ -262,6 +260,8 @@ class PersonController extends Controller
         } 
         catch (\Doctrine\ORM\NoResultException $e) {
              return null;
+             dump($e);
+             exit;
          }
         
     }
