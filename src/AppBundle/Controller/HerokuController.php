@@ -28,7 +28,10 @@ class HerokuController extends Controller
              return null;
              var_dump($e);
          }
-        
+
+        return array(
+            'result' => $result,
+              );
     }
 
 }
