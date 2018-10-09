@@ -14,8 +14,7 @@ class HerokuController extends Controller
      */
     public function myAction()
     {
-        echo "hello";
-
+       
         $em = $this->getDoctrine()->getManager();
         $RAW_QUERY = 'SELECT id,Name,FirstName,LastName,Email,MobilePhone FROM salesforce.contact as contact';
         try {
@@ -28,8 +27,34 @@ class HerokuController extends Controller
              return null;
             }
 
-          return $this->render('AppBundle:Page:my.html.twig', array('result' => $result));
+          return array('result' => $result);
 
     }
+
+    // /**
+    //  * 
+    //  * @Route("/", name="heroku")
+    //  * @Method("GET")
+    //  * @Template()
+    //  */
+    // public function indexAction()
+    // {
+    //     $contact = new Person();
+    //     $form = $this->createCreateForm($contact);
+    //     $form->handleRequest($request);
+
+    //     if ($form->isValid()) {
+    //         $em = $this->getDoctrine()->getManager();
+    //         $em->persist($contact);
+    //         $em->flush();
+
+    //         return $this->redirect($this->generateUrl('person_show', array('id' => $entity->getId())));
+    //     }
+
+    //     return array(
+    //         'entity' => $entity,
+    //         'form'   => $form->createView(),
+    //     );
+    // }
 
 }
