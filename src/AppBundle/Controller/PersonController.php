@@ -209,8 +209,7 @@ class PersonController extends Controller
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, $id)
-    { echo "hello world";
-    exit;
+    { 
         $form = $this->createDeleteForm($id);
         $form->handleRequest($request);
 
@@ -248,11 +247,9 @@ class PersonController extends Controller
 
 
     public function myAction(Request $request)
-    { echo "hello workd";
-    exit;
+    { 
 
         $em = $this->getDoctrine()->getManager();
-var_dump($em);
         $RAW_QUERY = 'SELECT id,Name,FirstName,LastName,Email,MobilePhone FROM salesforce.contact as contact';
         try {
         $statement = $em->getConnection()->prepare($RAW_QUERY);
@@ -269,4 +266,27 @@ var_dump($em);
         
     }
     
+
+     public function testAction(Request $request)
+    { 
+echo "hero coming";
+exit;
+        // $em = $this->getDoctrine()->getManager();
+        // $RAW_QUERY = 'SELECT id,Name,FirstName,LastName,Email,MobilePhone FROM salesforce.contact as contact';
+        // try {
+        // $statement = $em->getConnection()->prepare($RAW_QUERY);
+        // $statement->execute();
+        // $result = $statement->fetchAll();
+        // var_dump($result);
+
+        // } 
+        // catch (\Doctrine\ORM\NoResultException $e) {
+        //      return null;
+        //      var_dump($e);
+        //      exit;
+        //  }
+        
+    }
+
+
 }
