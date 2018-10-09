@@ -249,7 +249,7 @@ class PersonController extends Controller
     public function myAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
-var_dump($em);
+dump($em);
 die;
         $RAW_QUERY = 'SELECT id,Name,FirstName,LastName,Email,MobilePhone FROM salesforce.contact as contact';
                
