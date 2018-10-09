@@ -247,12 +247,12 @@ class PersonController extends Controller
  /**
      * 
      *
-     * @Route("/", name="myaction")
+     * @Route("/person/myaction", name="myaction")
      * 
      */
 
     public function myAction(Request $request)
-    { 
+    { echo "hello";
 
         $em = $this->getDoctrine()->getManager();
         $RAW_QUERY = 'SELECT id,Name,FirstName,LastName,Email,MobilePhone FROM salesforce.contact as contact';
@@ -266,7 +266,6 @@ class PersonController extends Controller
         catch (\Doctrine\ORM\NoResultException $e) {
              return null;
              var_dump($e);
-             exit;
          }
         
     }
