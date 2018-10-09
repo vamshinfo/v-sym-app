@@ -28,7 +28,7 @@ class HerokuController extends Controller
              return null;
             }
 
-          return $this->render('AppBundle:Page:my.html.twig', array('contact' => $result));
+          return $this->render('AppBundle:Page:my.html.twig', array('result' => $result));
 
     }
 
