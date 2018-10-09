@@ -1,0 +1,32 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}AppBundle:Contact:show{% endblock %}
+
+{% block body %}
+<h1>Welcome to the Contact:show page</h1>
+<table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Email</th>
+                <th>Mobilephone</th>
+              
+            </tr>
+        </thead>
+        <tbody>
+        {% for contact in result %}
+            <tr>
+                <td>{{ contact.id }}</a></td>
+                <td>{{ contact.name }}</td>
+                <td>{{ contact.firstname }}</td>
+                <td>{{ contact.lastname }}</td>
+                <td>{{ contact.email }}</td>
+                <td>{{ contact.mobilephone }}</td>
+           </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
