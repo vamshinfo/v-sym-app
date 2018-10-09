@@ -10,6 +10,14 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use AppBundle\Entity\Person;
 use AppBundle\Form\PersonType;
 
+ function pg_connection_string() {
+          // we will fill this out next
+            return "dbname=db8p6u3ufjk5fo host=ec2-54-225-92-1.compute-1.amazonaws.com 
+            port=5432
+            user=hbaruwpzfgidzy 
+            password=61fbf1c393a9b7e041c171520b91a8b2bdd1bd2957ef5fa43736d4177b6ccbeb 
+            sslmode=require";
+        }
 /**
  * Person controller.
  *
@@ -246,18 +254,10 @@ class PersonController extends Controller
     }
 
 
-   //  public function myAction(Request $request)
-   // {
+    public function myAction(Request $request)
+   {
 
-       public function pg_connection_string() {
-          // we will fill this out next
-            return 
-            "dbname=db8p6u3ufjk5fo host=ec2-54-225-92-1.compute-1.amazonaws.com 
-            port=5432
-            user=hbaruwpzfgidzy 
-            password=61fbf1c393a9b7e041c171520b91a8b2bdd1bd2957ef5fa43736d4177b6ccbeb 
-            sslmode=require";
-        }
+      
 
             $db = pg_connect(pg_connection_string());
         if (!$db) {
@@ -281,6 +281,6 @@ class PersonController extends Controller
 
 //          }
         
-    // }
+    }
     
 }
