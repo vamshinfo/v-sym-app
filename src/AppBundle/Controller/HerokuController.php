@@ -14,7 +14,8 @@ class HerokuController extends Controller
      */
     public function myAction()
     {
-       
+        echo "hello";
+
         $em = $this->getDoctrine()->getManager();
         $RAW_QUERY = 'SELECT id,Name,FirstName,LastName,Email,MobilePhone FROM salesforce.contact as contact';
         try {
@@ -30,6 +31,5 @@ class HerokuController extends Controller
           return $this->render('AppBundle:Page:my.html.twig', array('result' => $result));
 
     }
-    
 
 }
