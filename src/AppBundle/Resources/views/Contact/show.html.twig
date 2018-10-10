@@ -18,14 +18,14 @@
             </tr>
         </thead>
         <tbody>
-          {% for contact in result %}
+          {% for result in contact %}
             <tr>
-                <td>{{ contact.id }}</a></td>
-                <td>{{ contact.name }}</td>
-                <td>{{ contact.firstname }}</td>
-                <td>{{ contact.lastname }}</td>
-                <td>{{ contact.email }}</td>
-                <td>{{ contact.mobilephone }}</td>
+                <td>{{ result.id }}</a></td>
+                <td>{{ result.name }}</td>
+                <td>{{ result.firstname }}</td>
+                <td>{{ result.lastname }}</td>
+                <td>{{ result.email }}</td>
+                <td>{{ result.mobilephone }}</td>
            </tr>
         {% endfor %}
         </tbody>
