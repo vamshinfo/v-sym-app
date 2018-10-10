@@ -4,7 +4,8 @@
 
 {% block body %}
 <h1>Welcome to the Contact:show page</h1>
-<table class="records_list">
+
+ <table class="records_list">
         <thead>
             <tr>
                 <th>Id</th>
@@ -13,11 +14,11 @@
                 <th>Lastname</th>
                 <th>Email</th>
                 <th>Mobilephone</th>
-              
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-        {% for contact in result %}
+          {% for contact in result %}
             <tr>
                 <td>{{ contact.id }}</a></td>
                 <td>{{ contact.name }}</td>

@@ -14,7 +14,9 @@ class ContactController extends Controller
      */
     public function showAction()
     {
-    	$em = $this->getDoctrine()->getManager();
+                echo "hello";
+
+        $em = $this->getDoctrine()->getManager();
         $RAW_QUERY = 'SELECT id,Name,FirstName,LastName,Email,MobilePhone FROM salesforce.contact as contact';
         try {
         $statement = $em->getConnection()->prepare($RAW_QUERY);
@@ -25,7 +27,8 @@ class ContactController extends Controller
         catch (\Doctrine\ORM\NoResultException $e) {
              return null;
             }
-         return $this->render('AppBundle:Page:my.html.twig', array('result' => $result));
-          }
 
+          return $this->render('AppBundle:Page:my.html.twig', array('result' => $result));
+
+    }
 }
