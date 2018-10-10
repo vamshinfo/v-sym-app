@@ -28,7 +28,7 @@ class ContactController extends Controller
              return null;
             }
 
-          return $this->render('AppBundle:Page:my.html.twig', array('contact' => $result));
+          return  array('contact' => $result));
 
     }
 }
