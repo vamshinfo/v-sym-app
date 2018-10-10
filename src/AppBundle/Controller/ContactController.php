@@ -20,9 +20,7 @@ class ContactController extends Controller
         $statement = $em->getConnection()->prepare($RAW_QUERY);
         $statement->execute();
         $result = $statement->fetchAll();
-        var_dump($result);
-
-    	    } 
+           } 
         catch (\Doctrine\ORM\NoResultException $e) {
              return null;
             }
