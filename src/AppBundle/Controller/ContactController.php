@@ -29,7 +29,7 @@ class ContactController extends Controller
              return null;
             }
 
-          return $this->render('AppBundle:Page:my.html.twig', array('result' => $result));
+          return $this->render('AppBundle:Page:show.html.twig', array('result' => $result));
 
     }
 }
