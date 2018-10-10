@@ -23,13 +23,13 @@ class ContactController extends Controller
         $statement->execute();
         $result = $statement->fetchAll();
         var_dump($result);
-        
+
     	    } 
         catch (\Doctrine\ORM\NoResultException $e) {
              return null;
             }
 
-          return $this->render('AppBundle:Page:my.html.twig', array('contact' => $result));
+          return $this->render('AppBundle:Page:my.html.twig', array('result' => $result));
 
     }
 }
