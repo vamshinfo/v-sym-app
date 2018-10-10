@@ -23,6 +23,7 @@ class ContactController extends Controller
         $statement->execute();
         $result = $statement->fetchAll();
         var_dump($result);
+        
     	    } 
         catch (\Doctrine\ORM\NoResultException $e) {
              return null;
