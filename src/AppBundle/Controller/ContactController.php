@@ -14,9 +14,7 @@ class ContactController extends Controller
      */
     public function showAction()
     {
-                echo "hello";
-
-        $em = $this->getDoctrine()->getManager();
+       	$em = $this->getDoctrine()->getManager();
         $RAW_QUERY = 'SELECT id,Name,FirstName,LastName,Email,MobilePhone FROM salesforce.contact as contact';
         try {
         $statement = $em->getConnection()->prepare($RAW_QUERY);
@@ -30,6 +28,6 @@ class ContactController extends Controller
             }
 
           return $this->render('AppBundle:Page:show.html.twig', array('result' => $result));
-
     }
+    
 }
